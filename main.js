@@ -1,21 +1,4 @@
-var data = {
-  "Рыбы": {
-    "Форель": {},
-    "Щука": {}
-  },
-  "Деревья": {
-    "Хвойные": {
-      "Лиственница": {},
-      "Ель": {}
-    },
-    "Цветковые": {
-      "Берёза": {},
-      "Тополь": {}
-    }
-  }
-}
-
-const container = document.getElementById("data-container");
+const container = document.querySelector("#data-container");
 function createTree(container, data) {
   const elemUl = document.createElement('ul');
   if (Object.keys(data).length === 0) {
@@ -31,4 +14,19 @@ function createTree(container, data) {
   }
 }
 
-createTree(container, data);
+createTree(container, data = {
+  "Рыбы": {
+    "Форель": {},
+    "Щука": {}
+  },
+  "Деревья": {
+    "Хвойные": {
+      "Лиственница": {},
+      "Ель": {}
+    },
+    "Цветковые": {
+      "Берёза": {},
+      "Тополь": {}
+    }
+  }
+});
